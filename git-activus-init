@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Create a new repo
+git init
+
+# Get the git ignore file
+git clone https://github.com/github/gitignore.git
+cp ./gitignore/VisualStudio.gitignore ./.gitignore -f
+rm -r -f ./gitignore/
+
+# Add the subversion folder to the ignore file
+echo ".svn" >> .gitignore
+
+# Commit the current state of the repo
+git add -A
+git commit -m "initial update"
+
+# Create the branches and switch to the development one
+git branch Subversion
+git checkout -b LocalDevelopment
+git branch -d master

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Stash any current work
+git stash -u
+
+# Switch to the subversion branch and do a subversion update
+git checkout -f Subversion
+/c/Program\ Files/TortoiseSVN/bin/svn update
+
+# Commit and updates into the subversion branch
+git add -A
+git commit -m "update from Subversion"
+
+# Switch back to the development branch and do a stash pop
+git checkout -f LocalDevelopment
+git stash pop
