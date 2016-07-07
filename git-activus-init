@@ -10,6 +10,10 @@ rm -r -f ./gitignore/
 
 # Add the subversion folder to the ignore file
 echo ".svn" >> .gitignore
+echo "Dll Library" >> .gitignore
+echo "*.dll" >> .gitignore
+echo "*.exe" >> .gitignore
+echo "CommonLib" >> .gitignore
 
 # Commit the current state of the repo
 git add -A
